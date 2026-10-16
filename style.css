@@ -1,0 +1,370 @@
+
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+:root {
+    --rosa-fundo: #ffe3ee;
+    --rosa-claro: #fff5f9;
+    --rosa: #ee8fb5;
+    --rosa-forte: #d95791;
+    --rosa-escuro: #86415f;
+    --texto: #70445a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 80px 18px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--texto);
+    background: linear-gradient(
+        135deg,
+        #ffe8f0,
+        #fff5f9,
+        #fbd9e8
+    );
+}
+
+/* ==========================
+   CORAÇÕES DO FUNDO
+========================== */
+
+.fundo-coracoes {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.fundo-coracoes span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 25px;
+    opacity: 0.6;
+    animation: subirCoracao 12s linear infinite;
+}
+
+.fundo-coracoes span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.fundo-coracoes span:nth-child(2) {
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.fundo-coracoes span:nth-child(3) {
+    left: 28%;
+    animation-delay: 4s;
+}
+
+.fundo-coracoes span:nth-child(4) {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.fundo-coracoes span:nth-child(5) {
+    left: 52%;
+    animation-delay: 5s;
+}
+
+.fundo-coracoes span:nth-child(6) {
+    left: 65%;
+    animation-delay: 3s;
+}
+
+.fundo-coracoes span:nth-child(7) {
+    left: 75%;
+    animation-delay: 6s;
+}
+
+.fundo-coracoes span:nth-child(8) {
+    left: 84%;
+    animation-delay: 2s;
+}
+
+.fundo-coracoes span:nth-child(9) {
+    left: 92%;
+    animation-delay: 4s;
+}
+
+.fundo-coracoes span:nth-child(10) {
+    left: 35%;
+    animation-delay: 7s;
+}
+
+@keyframes subirCoracao {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* ==========================
+   BOTÃO DE MÚSICA
+========================== */
+
+.botao-musica {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    border: 1px solid #f1b6d0;
+    border-radius: 30px;
+    padding: 12px 18px;
+    color: var(--rosa-escuro);
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(217, 87, 145, 0.12);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.botao-musica:hover {
+    transform: translateY(-2px);
+    background: #fff0f6;
+}
+
+/* ==========================
+   CARTÃO PRINCIPAL
+========================== */
+
+.cartao {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 540px;
+    padding: 35px 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.94);
+    border: 2px solid #f6c9dc;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(190, 105, 145, 0.17);
+    animation: aparecer 0.8s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.decoracao {
+    color: var(--rosa);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.ursinho {
+    font-size: 55px;
+    margin-bottom: 12px;
+}
+
+.etiqueta {
+    color: var(--rosa-forte);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin: 12px 0;
+    color: var(--rosa-forte);
+    font-size: clamp(28px, 6vw, 38px);
+}
+
+.apelido {
+    color: var(--rosa-escuro);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.introducao {
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 18px 0;
+}
+
+/* ==========================
+   FOTO DO CASAL
+========================== */
+
+.foto-casal {
+    width: 100%;
+    max-width: 300px;
+    margin: 24px auto;
+    padding: 10px;
+    background: #fff0f6;
+    border: 2px solid #f4c4d8;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(217, 87, 145, 0.15);
+    transform: rotate(-2deg);
+}
+
+.foto-casal img {
+    display: block;
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.foto-casal p {
+    margin: 12px 0 3px;
+    color: var(--rosa-escuro);
+    font-size: 14px;
+}
+
+/* ==========================
+   PERGUNTA E MENSAGENS
+========================== */
+
+.linha-coracao {
+    margin: 22px 0;
+    color: var(--rosa);
+    font-size: 18px;
+}
+
+h2 {
+    color: var(--rosa-forte);
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+.subtexto {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 15px 0 25px;
+}
+
+/* ==========================
+   BOTÕES SIM E NÃO
+========================== */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    min-height: 48px;
+}
+
+.botoes button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.sim {
+    color: white;
+    background: var(--rosa-forte);
+    box-shadow: 0 5px 12px rgba(217, 87, 145, 0.2);
+}
+
+.sim:hover {
+    background: #c94880;
+    transform: translateY(-2px);
+}
+
+.nao {
+    color: var(--rosa-escuro);
+    background: #f8e8ef;
+}
+
+.nao:hover {
+    background: #f1d7e3;
+}
+
+/* ==========================
+   ASSINATURA E RODAPÉ
+========================== */
+
+.assinatura {
+    margin-top: 28px;
+    color: var(--rosa-escuro);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.mensagem-inferior {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--rosa-escuro);
+}
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 78px 12px 20px;
+    }
+
+    .cartao {
+        padding: 28px 19px;
+        border-radius: 23px;
+    }
+
+    .botao-musica {
+        top: 10px;
+        right: 10px;
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .foto-casal {
+        max-width: 260px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+}
+
+/* Respeita a preferência por menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
